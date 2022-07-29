@@ -64,7 +64,7 @@ namespace API.Controllers
             }
 
 
-            return  age;
+            return  await Task.FromResult<int>(age) ;
         }
         
         [HttpPost("ageConverterSecond")]
