@@ -88,9 +88,9 @@ namespace API.Controllers
             {
                 year = year - 1;
             }
+            return await Task.FromResult<string>($"{year}-{month}-{Day}");
 
-
-            return $"{year}-{month}-{Day}";
+            //$"{year}-{month}-{Day}";
         }
     }
 }
