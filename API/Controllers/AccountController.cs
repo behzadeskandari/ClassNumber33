@@ -66,5 +66,31 @@ namespace API.Controllers
 
             return  age;
         }
+
+        [HttpPost("ageConverterSecond")]
+        public async Task<string> AgeConverterSecond(AgeConverterDto dateOfBirth)
+        {
+
+            //DateTime dateHolder = Convert.ToDateTime(dateOfBirth.DateOfBirth);
+            //string[] dateApart = dateHolder.ToString().Split("/");
+            //var yearfromDate = dateApart[2].Split(" ");
+            //var exactyear = yearfromDate.ElementAt(0);
+            //var exactday = dateApart.ElementAt(0);
+            //var exactmonth = dateApart.ElementAt(1);
+
+            int year = DateTime.Now.Year - dateOfBirth.DateOfBirth.Year;
+
+            int month = DateTime.Now.Month - dateOfBirth.DateOfBirth.Month;
+
+            int Day = DateTime.Now.Day - dateOfBirth.DateOfBirth.Day;
+
+            if (DateTime.Now.DayOfYear < dateOfBirth.DateOfBirth.DayOfYear)
+            {
+                year = year - 1;
+            }
+
+
+            return $"{year}-{month}-{Day}";
+        }
     }
 }
