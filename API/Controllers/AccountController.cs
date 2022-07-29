@@ -66,7 +66,7 @@ namespace API.Controllers
 
             return  age;
         }
-
+        
         [HttpPost("ageConverterSecond")]
         public async Task<string> AgeConverterSecond(AgeConverterDto dateOfBirth)
         {
@@ -77,6 +77,7 @@ namespace API.Controllers
             //var exactyear = yearfromDate.ElementAt(0);
             //var exactday = dateApart.ElementAt(0);
             //var exactmonth = dateApart.ElementAt(1);
+            
 
             int year = DateTime.Now.Year - dateOfBirth.DateOfBirth.Year;
 
