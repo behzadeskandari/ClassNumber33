@@ -1,0 +1,15 @@
+
+<div>
+<h1>{{title}}</h1>
+<ul>
+  <li *ngFor="let users of user">
+   {{users.id}} -- {{users.name}}
+    <div></div>
+
+  </li>
+  <li class="behzad" *ngFor="let item of weather">{{item.date}} temperatureC: {{item.temperatureC}} temperatureF : {{temperatureF}}</li>
+</ul>
+</div>
+
+
+<router-outlet></router-outlet>
